@@ -1,0 +1,32 @@
+title: Home page 😎
+description: "Class of 2025"
+owner_name: Ahmad Imran
+github_username: Ahmadimran2009
+github_repo: "Ahmad_2026" 
+baseurl: "/Ahmad_2026/"
+future: true
+remote_theme: jekyll/minima
+minima:
+  skin: dark
+  social_links:
+    - { platform: github, user_url: "https://github.com/nighthawkcoders"}
+    - { platform: x, user_url: "https://x.com/NighthawkCoding/" }
+    - { platform: youtube, user_url: "https://www.youtube.com/@nighthawkcodingsociety2868" } 
+# remote_theme: pages-themes/midnight@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
+# remote_theme: pages-themes/dinky@v0.2.0
+# remote_theme: pages-themes/minimal@v0.2.0
+# remote_theme: pages-themes/time-machine@v0.2.0
+plugins:
+  - jekyll-remote-theme
+header_pages:
+  - navigation/blog.md
+  - navigation/search.md
+  - navigation/about.md
+  - README4YML.md
+  - navigation/aboutme.md
+  - navigation/myjourney.md
+  - navigation/snake.md
+  - navigation/homework.md
+  - navigation/cookieclicker.md
+  - navigation/music.md
