@@ -1,6 +1,6 @@
 ---
 layout: page
-title: interactive map🗺️
+title: workout generator
 toc: true
 ---
 

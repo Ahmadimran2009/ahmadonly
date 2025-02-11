@@ -1,65 +1,39 @@
 ---
 layout: page
-title:  🌍 Random Country Generator
+title:  BMI Calculator
 permalink: /about/
 ---
  
- # 🌍 Random Country Generator
-Click the button below to get a random country!
+# BMI Calculator
 
-<button onclick="generateRandomCountry()">Generate Country</button>
+Enter your weight and height to calculate your Body Mass Index (BMI).
 
-<p id="countryDisplay">Click the button to see a country.</p>
+
+<label for="weight">Weight (kg):</label>
+<input type="number" id="weight" />
+<label for="height">Height (cm):</label>
+<input type="number" id="height" />
+<button onclick="calculateBMI()">Calculate BMI</button>
+<p id="bmiResult"></p>
 
 <script>
-  // Array of country names
-  const countries = [
-    'United States', 'Canada', 'Brazil', 'United Kingdom', 'Germany', 
-    'France', 'Italy', 'Australia', 'Japan', 'China', 'Pakistan', 'South Africa', 
-    'Mexico', 'Argentina', 'Spain', 'Russia', 'Egypt', 'Thailand', 'Turkey', 
-    'New Zealand', 'South Korea','Ireland'
-  ];
+function calculateBMI() {
+    let weight = document.getElementById("weight").value;
+    let height = document.getElementById("height").value / 100; // Convert cm to meters
+    if (weight > 0 && height > 0) {
+        let bmi = weight / (height * height);
+        let category = "";
 
-  function generateRandomCountry() {
-    // Generate a random index
-    const randomIndex = Math.floor(Math.random() * countries.length);
-    // Display the random country
-    document.getElementById('countryDisplay').innerText = countries[randomIndex];
-  }
+        if (bmi < 18.5) category = "Underweight";
+        else if (bmi < 24.9) category = "Normal weight";
+        else if (bmi < 29.9) category = "Overweight";
+        else category = "Obese";
+
+        document.getElementById("bmiResult").innerText = 
+            `Your BMI: ${bmi.toFixed(2)} (${category})`;
+    } else {
+        document.getElementById("bmiResult").innerText = "Please enter valid values.";
+    }
+}
 </script>
-
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Quiz</title>
-</head>
-<body>
-    <h1>mini Quiz💪🧠</h1>
-    <form id="quizForm">
-        <p>1. What is the capital of France?</p>
-        <input type="radio" id="paris" name="q1" value="paris">
-        <label for="paris">Paris</label><br>
-        <input type="radio" id="rome" name="q1" value="rome">
-        <label for="rome">Rome</label><br>
-        <input type="radio" id="berlin" name="q1" value="berlin">
-        <label for="berlin">Berlin</label><br>
-        <button type="button" onclick="submitQuiz()">Submit</button>
-    </form>
-
-    <script>
-        function submitQuiz() {
-            const form = document.getElementById('quizForm');
-            const answer = form.q1.value;
-            if (answer === 'paris') {
-                alert('Correct!');
-            } else {
-                alert('Try again.');
-            }
-        }
-    </script>
-</body>
-</html>
 
