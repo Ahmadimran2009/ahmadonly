@@ -2,8 +2,8 @@ title: Home page 😎
 description: "Class of 2025"
 owner_name: Ahmad Imran
 github_username: Ahmadimran2009
-github_repo: "Ahmad_2026" 
-baseurl: "/Ahmad_2026/"
+github_repo: "ahmadonly" 
+baseurl: "/ahmadonly/"
 future: true
 remote_theme: jekyll/minima
 minima:
